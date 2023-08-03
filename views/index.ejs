@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+
+    <body>
+        <main>
+            <div class="box" id="heading">
+                <h1>
+                    <%= Weekday %>, <%= Month %>, <%= Day %>
+                </h1>
+            </div>
+            <div class="box" id="items">
+
+                <%if (locals.task ) { %>
+                    <% task.forEach((tk)=>{ %>
+                        <div class="items task">
+                            <input type="checkbox"> <label class="label">
+                                <%= tk %>
+                            </label>
+                            <br>
+                        </div>
+                        <% }) %>
+                            <%} %>
+            <!-- </div>
+            <div class="box" id="addTask"> -->
+
+                <form action="/submit" method="post" class="items form">
+                    <input type="text" placeholder="Enter Task" name="task" id="enterTask">
+                    <button type="submit" name="gene" id="btn">+</button>
+                </form>
+            </div>
+    </body>
+</main>
+    <%- include("partials/footer.ejs") %>

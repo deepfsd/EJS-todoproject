@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+
+    <body>
+        <main>
+            <div class="box" id="heading">
+                <h1>
+                    Work List
+                </h1>
+            </div>
+            <div class="box" id="items">
+
+                <%if (locals.task2 ) { %>
+                    <% task2.forEach((tk2)=>{ %>
+                        <div class="items task">
+                            <input type="checkbox"> <label class="label">
+                                <%= tk2 %>
+                            </label>
+                            <br>
+                        </div>
+                        <% }) %>
+                            <%} %>
+            <!-- </div>
+            <div class="box" id="addTask"> -->
+
+                <form action="/submit2" method="post" class="items form">
+                    <input type="text" placeholder="Enter Task" name="task2" id="enterTask">
+                    <button type="submit" name="gene2" id="btn">+</button>
+                </form>
+            </div>
+    </body>
+</main>
+    <%- include("partials/footer.ejs") %>
